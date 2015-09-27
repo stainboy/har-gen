@@ -96,6 +96,11 @@ class HarInspector {
         if (name.length() > 255) {
             name = name.substring(0, 255)
         }
+        if (name.indexOf('?') != -1) {
+            // println "  DEBUG: org-> $name"
+            name = name.replaceAll('\\?', '!')
+            // println "  DEBUG: rep-> $name"
+        }
         return name
     }
 
